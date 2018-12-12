@@ -10,17 +10,17 @@ pipeline {
                }
              }
             }
-        stage('Build') {
+     /*   stage('Build') {
         steps {
            script {
-         sh 'mvn clean install'
-         /* env.JAVA = "${tool 'JAVA_1.8'}"
+            sh 'mvn clean install'
+          env.JAVA = "${tool 'JAVA_1.8'}"
           checkout scm
           def mvnHome = tool 'maven-3'
-          def JavaHome = tool 'JAVA_1.8' */
+          def JavaHome = tool 'JAVA_1.8' 
          }
          }
-         }
+         } */
          
        }
       }
