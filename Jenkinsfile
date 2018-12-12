@@ -13,7 +13,7 @@ pipeline {
         stage('Build') {
         steps {
            script {
-            sh 'mvn clean install'
+            sh "mvn clean install"
           /*env.JAVA = "${tool 'JAVA_1.8'}"
           checkout scm
           def mvnHome = tool 'maven-3'
