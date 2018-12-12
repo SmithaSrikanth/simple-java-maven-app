@@ -13,6 +13,7 @@ pipeline {
         stage('Build') {
         steps {
            script {
+            sh 'java -version'
             sh 'mvn clean install'
           /*env.JAVA = "${tool 'JAVA_1.8'}"
           checkout scm
