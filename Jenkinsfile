@@ -40,7 +40,7 @@ pipeline {
        stage('Docker run') {
         steps {
            script {
-             sh 'sudo docker run -d smithasrikanth/my-app-1.0-snapshot'
+             sh 'sudo docker run -p 3010:8080 -d smithasrikanth/my-app-1.0-snapshot'
            }
         }
        }
