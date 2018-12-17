@@ -14,9 +14,9 @@ pipeline {
         steps {
            script {
             sh 'sudo apt-get update -y'
-            sh 'sudo apt-get install openjdk-8-jdk'
+            sh 'sudo apt-get install openjdk-8-jdk -y'
             
-           /* sh 'sudo apt-get install maven'
+            sh 'sudo apt-get install maven -y'
           /*  sh 'sudo yum -y install maven'
             sh 'sudo mvn clean install'
           /*env.JAVA = "${tool 'JAVA_1.8'}"
