@@ -15,7 +15,6 @@ pipeline {
            script {
             sh 'sudo apt-get update -y'
             sh 'sudo apt-get install openjdk-8-jdk -y'
-            
             sh 'sudo apt-get install maven -y'
            sh 'mvn clean install'
                      /*env.JAVA = "${tool 'JAVA_1.8'}"
@@ -25,6 +24,6 @@ pipeline {
          }
          }
          }
-              }
+          }
       }
                
