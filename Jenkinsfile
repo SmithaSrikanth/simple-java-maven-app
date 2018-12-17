@@ -15,6 +15,7 @@ pipeline {
            script {
             sh 'sudo apt update'
             sh 'sudo apt install openjdk-8-jdk'
+            sh 'sudo apt policy maven'
             sh 'sudo apt install maven'
           /*  sh 'sudo yum -y install maven'
             sh 'sudo mvn clean install'
