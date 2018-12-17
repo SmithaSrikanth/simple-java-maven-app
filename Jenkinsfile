@@ -37,6 +37,13 @@ pipeline {
            }
         }
       }
+       stage('Docker run') {
+        steps {
+           script {
+             sh 'sudo docker run -p 3000:8080 -d smithasrikanth/my-app-1.0-snapshot'
+           }
+        }
+       }
           }
       }
                
