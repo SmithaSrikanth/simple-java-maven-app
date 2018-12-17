@@ -30,7 +30,10 @@ pipeline {
            script {
              sh 'sudo docker build -t smithasrikanth/my-app-1.0-SNAPSHOT'
              sh 'sudo docker images'
-             sh 'sudo docker psuh smithasrikanth/my-app-1.0-SNAPSHOT'
+        
+             sh 'sudo docker login -u=&env.uname -p=$env.pass'
+             
+              sh 'sudo docker push smithasrikanth/my-app-1.0-SNAPSHOT'
           }
       }
                
