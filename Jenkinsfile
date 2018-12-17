@@ -18,14 +18,13 @@ pipeline {
             
             sh 'sudo apt-get install maven -y'
            sh 'mvn clean install'
-            sh 'sudo mvn clean install'
-          /*env.JAVA = "${tool 'JAVA_1.8'}"
+                     /*env.JAVA = "${tool 'JAVA_1.8'}"
           checkout scm
           def mvnHome = tool 'maven-3'
           def JavaHome = tool 'JAVA_1.8' */
          }
          }
-         } 
-        }
+         }
+              }
       }
                
