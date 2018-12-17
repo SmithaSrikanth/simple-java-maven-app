@@ -31,7 +31,7 @@ pipeline {
              sh 'sudo docker build -t smithasrikanth/my-app-1.0-snapshot .'
              sh 'sudo docker images'
         
-             sh 'sudo docker login -username=&env.uname -password=$env.pass'
+             sh 'sudo docker login -username=$env.uname -password=$env.pass'
              
               sh 'sudo docker push smithasrikanth/my-app-1.0-snapshot'
            }
