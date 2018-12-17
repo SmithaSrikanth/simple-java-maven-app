@@ -16,7 +16,8 @@ pipeline {
             sh 'sudo apt-get update -y'
             sh 'sudo apt-get install openjdk-8-jdk -y'
             sh 'sudo apt-get install maven -y'
-           /*sh 'sudo mvn clean install'
+            sh 'mvn clean install -DskipTests'
+            
                      /*env.JAVA = "${tool 'JAVA_1.8'}"
           checkout scm
           def mvnHome = tool 'maven-3'
