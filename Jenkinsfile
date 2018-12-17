@@ -34,6 +34,9 @@ pipeline {
              sh 'sudo docker login -u=&env.uname -p=$env.pass'
              
               sh 'sudo docker push smithasrikanth/my-app-1.0-SNAPSHOT'
+           }
+        }
+      }
           }
       }
                
