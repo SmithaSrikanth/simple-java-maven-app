@@ -25,6 +25,12 @@ pipeline {
          }
          }
          }
+      stage('Docker Build') {
+        steps {
+           script {
+             sh 'sudo docker build -t smithasrikanth/my-app-1.0-SNAPSHOT'
+             sh 'sudo docker images'
+             sh 'sudo docker psuh smithasrikanth/my-app-1.0-SNAPSHOT'
           }
       }
                
