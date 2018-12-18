@@ -10,13 +10,15 @@ pipeline {
                   }
              }
             }
-        stage('Build') {
+        stage('Docker Build') {
         steps {
            script {
             sh 'sudo apt-get update -y'
             sh 'sudo apt-get install openjdk-8-jdk -y'
             sh 'sudo apt-get install maven -y'
             sh 'mvn clean install -DskipTests'
+            sh 'sudo docker build -t smithasrikanth/my-app-1.0-snapshot .'
+            sh 'sudo docker images'
             
                      /*env.JAVA = "${tool 'JAVA_1.8'}"
           checkout scm
@@ -25,25 +27,17 @@ pipeline {
          }
          }
          }
-      stage('Docker Build') {
+      stage('Docker Deploy') {
         steps {
            script {
-             sh 'sudo docker build -t smithasrikanth/my-app-1.0-snapshot .'
-             sh 'sudo docker images'
-        
+                 
              sh "sudo docker login -u=$env.username -p=$env.password"
              
             sh 'sudo docker push smithasrikanth/my-app-1.0-snapshot'
-           }
-        }
-      }
-       stage('Docker run') {
-        steps {
-           script {
              sh 'sudo docker run -p 3020:8080 -d smithasrikanth/my-app-1.0-snapshot'
            }
         }
-       }
-          }
+      }
+      }
       }
                
