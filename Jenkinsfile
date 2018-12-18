@@ -38,6 +38,15 @@ pipeline {
            }
         }
       }
+      stage('Install K8S') {
+        steps {
+           script {
+             sh 'curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.8.7/bin/linux/amd64/kubectl'
+             sh 'chmod +x ./kubectl'
+             sh 'mv ./kubectl /usr/local/bin/kubectl'
+           }
+        }
+      }
       }
       }
                
