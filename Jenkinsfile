@@ -44,6 +44,12 @@ pipeline {
              sh 'curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.8.7/bin/linux/amd64/kubectl'
              sh 'chmod +x ./kubectl'
              sh 'mv ./kubectl /usr/local/bin/kubectl'
+             
+             sh 'curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.23.0/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/'
+             sh 'minikube start --vm-driver=none'
+             sh 'kubectl run hello-minikube --image=gcr.io/google_containers/echoserver:1.4 --port=8080'
+             sh 'kubectl expose deployment hello-minikube  --type=NodePort'
+             sh 'kubectl get pod'
            }
         }
       }
